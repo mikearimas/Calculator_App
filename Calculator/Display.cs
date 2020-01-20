@@ -10,6 +10,7 @@ namespace Calculator
     {
         public string CurrentDisplay { get; set; }
         private static string _currentDisplay = "";
+        private static string test = "";
         public static string Builder(string curDisplay, string newInput)
         {
             curDisplay = (curDisplay == "0") ? curDisplay = newInput : curDisplay += newInput;
@@ -20,6 +21,11 @@ namespace Calculator
         public string Refresh()
         {
             return _currentDisplay;
+            
+        }
+        public void ClearDisplay()
+        {
+            _currentDisplay = "";
         }
     }
 }

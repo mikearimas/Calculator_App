@@ -96,22 +96,55 @@ namespace Calculator
         {
             if (numSaved == false)
             {
-                firstNum = mainDisplay;
+                if (firstNum == "") firstNum = mainDisplay;
                 txtBox_History.Text = Equations.Builder(firstNum, "addition");
                 numSaved = true;
                 mainDisplay = "";
-                
+
             } else
             {
-                secondNum = mainDisplay;
-                txtBox_Equation.Text = Equations.Builder(firstNum, secondNum, "addition");
-                txtBox_History.Text = Equations.HistoryBuilder(firstNum, secondNum, "addition");
-                firstNum = secondNum;
-                mainDisplay = "";
+                if (!String.IsNullOrEmpty(mainDisplay)){
+                    secondNum = mainDisplay;
+                    txtBox_History.Text = Equations.HistoryBuilder(firstNum, secondNum, "addition");
+                    firstNum = txtBox_Equation.Text = Equations.Builder(firstNum, secondNum, "addition");
+                    mainDisplay = "";
+                
+            }
 
             }
 
         }
+
+        private void btn_Equals_Click(object sender, EventArgs e)
+        {
+            string lastExpression = Equations.GetExpression();
+
+        }
+
+        private void btn_ClearEntry_Click(object sender, EventArgs e)
+        {
+            ClearCurrentEntry();
+        }
+
+        private void btn_ClearAll_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+        }
+
+        private void ClearAll()
+        {
+            txtBox_Equation.Text = mainDisplay = "0";
+            txtBox_History.Text = "";
+            firstNum = "";
+            secondNum = "";
+            numSaved = false;
+            Display.ClearDisplay();
+        }
+        private void ClearCurrentEntry()
+        {
+            txtBox_Equation.Text = mainDisplay = "0";
+        }
+
 
     }
 }

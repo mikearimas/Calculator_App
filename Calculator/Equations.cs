@@ -8,8 +8,10 @@ namespace Calculator
 {
     class Equations
     {
+        private static string _expression;
         public static string Builder(string firstNum, string secondNum, string expression)
         {
+            _expression = expression;
             switch (expression)
             {
                 case "addition":
@@ -28,6 +30,7 @@ namespace Calculator
         }
         public static string Builder(string firstNum, string expression)
         {
+            _expression = expression;
             switch (expression)
             {
                 case "addition":
@@ -46,6 +49,7 @@ namespace Calculator
 
         public static string HistoryBuilder(string firstNum, string secondNum, string expression)
         {
+            _expression = expression;
             switch (expression)
             {
                 case "addition":
@@ -60,6 +64,11 @@ namespace Calculator
 
             }
             return "Null";
+        }
+
+        public static string GetExpression()
+        {
+            return _expression;
         }
     }
 }

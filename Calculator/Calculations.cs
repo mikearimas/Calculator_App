@@ -26,6 +26,22 @@ namespace Calculator
         {
             return (num2 != 0) ? num * num2 : 0;
         }
+
+        public static double Equals(double num, double num2, string expression)
+        {
+            switch (expression)
+            {
+                case "addition":
+                    return Addition(num, num2);
+                case "subtraction":
+                    return Subtraction(num, num2);
+                case "multiplication":
+                    return Multiplication(num, num2);
+                case "division":
+                    return Division(num, num2);
+            }
+            return 0;
+        }
     }
 }
 

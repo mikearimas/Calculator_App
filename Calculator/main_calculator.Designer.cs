@@ -277,6 +277,7 @@
             this.btn_Equals.TabIndex = 10;
             this.btn_Equals.Text = "=";
             this.btn_Equals.UseVisualStyleBackColor = true;
+            this.btn_Equals.Click += new System.EventHandler(this.btn_Equals_Click);
             // 
             // btn_ClearAll
             // 
@@ -287,6 +288,7 @@
             this.btn_ClearAll.TabIndex = 15;
             this.btn_ClearAll.Text = "C";
             this.btn_ClearAll.UseVisualStyleBackColor = true;
+            this.btn_ClearAll.Click += new System.EventHandler(this.btn_ClearAll_Click);
             // 
             // panel2
             // 
@@ -306,6 +308,7 @@
             this.btn_ClearEntry.TabIndex = 16;
             this.btn_ClearEntry.Text = "CE";
             this.btn_ClearEntry.UseVisualStyleBackColor = true;
+            this.btn_ClearEntry.Click += new System.EventHandler(this.btn_ClearEntry_Click);
             // 
             // txtBox_Equation
             // 
