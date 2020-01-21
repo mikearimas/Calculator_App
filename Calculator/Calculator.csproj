@@ -55,7 +55,6 @@
     <Compile Include="main_calculator.Designer.cs">
       <DependentUpon>main_calculator.cs</DependentUpon>
     </Compile>
-    <Compile Include="NumberBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="main_calculator.resx">
