@@ -9,6 +9,7 @@ namespace Calculator
     class Equations
     {
         private static string _expression;
+        private static string _queueExpression;
         public static string Builder(string firstNum, string secondNum, string expression)
         {
             _expression = expression;
@@ -64,6 +65,16 @@ namespace Calculator
 
             }
             return "Null";
+        }
+
+        public static string GetQueueExpression()
+        {
+            return _queueExpression;
+        }
+
+        public static void SetExpression(string expression)
+        {
+            _queueExpression = expression;
         }
 
         public static string GetExpression()

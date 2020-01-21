@@ -31,7 +31,7 @@
             this.btn_Seven = new System.Windows.Forms.Button();
             this.Panel_Numbers = new System.Windows.Forms.Panel();
             this.btn_SignChange = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btn_zero = new System.Windows.Forms.Button();
             this.btn_Decimal = new System.Windows.Forms.Button();
             this.btn_One = new System.Windows.Forms.Button();
             this.btn_Two = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             // Panel_Numbers
             // 
             this.Panel_Numbers.Controls.Add(this.btn_SignChange);
-            this.Panel_Numbers.Controls.Add(this.button11);
+            this.Panel_Numbers.Controls.Add(this.btn_zero);
             this.Panel_Numbers.Controls.Add(this.btn_Decimal);
             this.Panel_Numbers.Controls.Add(this.btn_One);
             this.Panel_Numbers.Controls.Add(this.btn_Two);
@@ -97,15 +97,16 @@
             this.btn_SignChange.Text = "+/-";
             this.btn_SignChange.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btn_zero
             // 
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(83, 195);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(74, 58);
-            this.button11.TabIndex = 11;
-            this.button11.Text = "0";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btn_zero.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_zero.Location = new System.Drawing.Point(83, 195);
+            this.btn_zero.Name = "btn_zero";
+            this.btn_zero.Size = new System.Drawing.Size(74, 58);
+            this.btn_zero.TabIndex = 11;
+            this.btn_zero.Text = "0";
+            this.btn_zero.UseVisualStyleBackColor = true;
+            this.btn_zero.Click += new System.EventHandler(this.btn_zero_Click);
             // 
             // btn_Decimal
             // 
@@ -116,6 +117,7 @@
             this.btn_Decimal.TabIndex = 10;
             this.btn_Decimal.Text = ".";
             this.btn_Decimal.UseVisualStyleBackColor = true;
+            this.btn_Decimal.Click += new System.EventHandler(this.btn_Decimal_Click);
             // 
             // btn_One
             // 
@@ -236,6 +238,7 @@
             this.btn_Division.TabIndex = 14;
             this.btn_Division.Text = "÷";
             this.btn_Division.UseVisualStyleBackColor = true;
+            this.btn_Division.Click += new System.EventHandler(this.btn_Division_Click);
             // 
             // btn_Multiplication
             // 
@@ -246,6 +249,7 @@
             this.btn_Multiplication.TabIndex = 13;
             this.btn_Multiplication.Text = "X";
             this.btn_Multiplication.UseVisualStyleBackColor = true;
+            this.btn_Multiplication.Click += new System.EventHandler(this.btn_Multiplication_Click);
             // 
             // btn_Subtraction
             // 
@@ -256,6 +260,7 @@
             this.btn_Subtraction.TabIndex = 12;
             this.btn_Subtraction.Text = "-";
             this.btn_Subtraction.UseVisualStyleBackColor = true;
+            this.btn_Subtraction.Click += new System.EventHandler(this.btn_Subtraction_Click);
             // 
             // btn_Addition
             // 
@@ -346,7 +351,7 @@
         private System.Windows.Forms.Button btn_Seven;
         private System.Windows.Forms.Panel Panel_Numbers;
         private System.Windows.Forms.Button btn_SignChange;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btn_zero;
         private System.Windows.Forms.Button btn_Decimal;
         private System.Windows.Forms.Button btn_One;
         private System.Windows.Forms.Button btn_Two;
