@@ -90,6 +90,14 @@ namespace Calculator
                 txtBox_Equation.Text = mainDisplay = Display.Refresh();
             }
         }
+
+        private void btn_SignChange_Click(object sender, EventArgs e)
+        {
+                if (!ValidateStr(txtBox_Equation.Text)) {
+                Display.SignChange(curDisplay: txtBox_Equation.Text);
+                txtBox_Equation.Text = mainDisplay = Display.Refresh();
+            }
+        }
         private void btn_Addition_Click(object sender, EventArgs e)
         {
             EquationButtonHandler("addition");
@@ -112,7 +120,8 @@ namespace Calculator
 
         private void btn_Equals_Click(object sender, EventArgs e)
         {
-            string lastExpression = Equations.GetExpression();
+        
+        string lastExpression = expressionQueue == true ? Equations.GetQueueExpression() : Equations.GetExpression();
 
 
             if (!ValidateStr(firstNum) && ValidateStr(secondNum)) secondNum = mainDisplay;
@@ -188,10 +197,12 @@ namespace Calculator
                 }
                 else
                 {
+                    string temp = expression;
                     expression = Equations.GetQueueExpression();
                     secondNum = mainDisplay;
                     UpdateTextBoxes(firstNum, secondNum, expression);
-                    expressionQueue = false;
+                    Equations.SetExpression(temp);
+                    //expressionQueue = false;
                 }
             }
             else if (!ValidateStr(mainDisplay) && ValidateStr(secondNum)) 
@@ -200,6 +211,8 @@ namespace Calculator
                 txtBox_History.Text = Equations.Builder(firstNum, expression);
                 if (ValidateStr(secondNum)) secondNum = mainDisplay;
                 mainDisplay = "";
+                Equations.SetExpression(expression);
+                expressionQueue = true;
 
             }
             else if (ValidateStr(mainDisplay))
@@ -244,6 +257,7 @@ namespace Calculator
             txtBox_Equation.Text = mainDisplay = Display.Refresh();
 
         }
+
 
     }
 }

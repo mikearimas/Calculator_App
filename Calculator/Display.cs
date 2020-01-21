@@ -17,6 +17,13 @@ namespace Calculator
             return curDisplay;
         }
 
+        public static string SignChange(string curDisplay)
+        {
+            curDisplay = (curDisplay.Contains("-")) ? curDisplay = curDisplay.Trim(new Char[] { '-' }) : curDisplay = "-" + curDisplay;
+            _currentDisplay = curDisplay;
+            return curDisplay;
+        }
+
         public string Refresh()
         {
             return _currentDisplay;

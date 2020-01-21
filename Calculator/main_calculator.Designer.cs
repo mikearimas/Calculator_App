@@ -96,6 +96,7 @@
             this.btn_SignChange.TabIndex = 12;
             this.btn_SignChange.Text = "+/-";
             this.btn_SignChange.UseVisualStyleBackColor = true;
+            this.btn_SignChange.Click += new System.EventHandler(this.btn_SignChange_Click);
             // 
             // btn_zero
             // 
